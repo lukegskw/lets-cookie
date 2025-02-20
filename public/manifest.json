@@ -2,7 +2,7 @@
   "manifest_version": 3,
 
   "name": "Let's Cookie!",
-  "description": "Cookie Manager",
+  "description": "Your cookie manager",
   "version": "1.0",
 
   "action": {
