@@ -1,35 +1,26 @@
 {
   "manifest_version": 3,
 
-  "name": "Chrome Extension TypeScript Starter",
-  "description": "Chrome Extension, TypeScript, Visual Studio Code",
+  "name": "Let's Cookie!",
+  "description": "Your cookie manager",
   "version": "1.0",
 
-  "options_ui": {
-    "page": "options.html"
-  },
-
   "action": {
-    "default_icon": "icon.png",
+    "default_icon": "icon16.png",
     "default_popup": "popup.html"
   },
 
-  "content_scripts": [
-      {
-          "matches": ["<all_urls>"],
-          "js": ["js/vendor.js", "js/content_script.js"]
-      }
-  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
 
   "background": {
     "service_worker": "js/background.js"
   },
 
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["cookies", "tabs"],
 
-  "host_permissions": [
-    "<all_urls>"
-  ]
+  "host_permissions": ["<all_urls>"]
 }

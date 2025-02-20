@@ -1,70 +1,84 @@
-# Chrome Extension TypeScript Starter
+# Let's Cookie! 🍪
 
-![build](https://github.com/chibat/chrome-extension-typescript-starter/workflows/build/badge.svg)
+A powerful Chrome extension that makes cookie management a breeze. Built with TypeScript, React, and Primer components.
 
-Chrome Extension, TypeScript and Visual Studio Code
+## ✨ Features
 
-## Prerequisites
+### 🎯 Apply to Any Tab (Our Killer Feature!)
 
-* [node + npm](https://nodejs.org/) (Current Version)
+Ever needed to copy a cookie from one tab to another? Let's Cookie makes it effortless:
 
-## Option
+- Select any cookie and apply it to any open tab
+- Visual hover feedback shows you exactly which tab you're currently at
+- Perfect for testing, development, and debugging
 
-* [Visual Studio Code](https://code.visualstudio.com/)
+### 🛠️ More Great Features
 
-## Includes the following
+- 📋 One-click cookie value copying
+- 🗑️ Quick cookie deletion
+- 👁️ Real-time cookie value editing
+- 🎨 Beautiful, clean UI using GitHub's Primer design system
 
-* TypeScript
-* Webpack
-* React
-* Jest
-* Example Code
-    * Chrome Storage
-    * Options Version 2
-    * content script
-    * count up badge number
-    * background
+## 🚀 Getting Started
 
-## Project Structure
+### Installation
 
-* src/typescript: TypeScript source files
-* src/assets: static files
-* dist: Chrome Extension directory
-* dist/js: Generated JavaScript files
+1. Clone this repository
 
-## Setup
-
+```bash
+git clone https://github.com/yourusername/lets-cookie.git
+cd lets-cookie
 ```
+
+2. Install dependencies
+
+```bash
 npm install
 ```
 
-## Import as Visual Studio Code project
+3. Build the extension
 
-...
-
-## Build
-
-```
+```bash
 npm run build
 ```
 
-## Build in watch mode
+4. Load in Chrome
 
-### terminal
+- Open Chrome and navigate to `chrome://extensions`
+- Enable "Developer mode"
+- Click "Load unpacked"
+- Select the `dist` directory from this project
 
-```
-npm run watch
-```
+### Development
 
-### Visual Studio Code
+- Run in watch mode: `npm run watch`
+- Run tests: `npm test`
 
-Run watch mode.
+## 🔧 Technical Stack
 
-type `Ctrl + Shift + B`
+- **TypeScript** - For type-safe code
+- **React** - UI framework
+- **Primer Components** - GitHub's design system
+- **Chrome Extension APIs** - For cookie and tab management
 
-## Load extension to chrome
+## 📝 Usage
 
-Load `dist` directory
+1. Click the Let's Cookie extension icon
+2. View and manage cookies for the current domain
+3. Use our signature "Apply to Tab" feature:
+   - Click the "Apply to Tab" button on any cookie
+   - Hover over target tabs to preview
+   - Click to apply the cookie to your chosen tab
 
-## Test
-`npx jest` or `npm run test`
+## 🤝 Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request.
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with [Chrome Extension TypeScript Starter](https://github.com/chibat/chrome-extension-typescript-starter)
+- Uses GitHub's [Primer Design System](https://primer.style/)
