@@ -107,6 +107,7 @@ const CookieItem = ({ cookie, onApply, onDelete }: Props) => {
                     sx={{
                       minWidth: "200px",
                       maxWidth: "300px",
+                      backgroundColor: tab.active ? "Highlight" : "transparent",
                     }}
                   >
                     {tab.title || "Untitled"}
@@ -256,7 +257,6 @@ const CookieManager = () => {
 
 const root = createRoot(document.getElementById("root")!);
 
-// Check system theme
 const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 root.render(
