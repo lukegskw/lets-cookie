@@ -1,0 +1,205 @@
+/* Base CSS custom properties following Primer's design tokens */
+
+/* Light theme (default) */
+:root {
+  /* Canvas colors */
+  --color-canvas-default: #ffffff;
+  --color-canvas-subtle: #f6f8fa;
+  --color-canvas-inset: #f6f8fa;
+
+  /* Foreground colors */
+  --color-fg-default: #1f2328;
+  --color-fg-muted: #636c76;
+  --color-fg-subtle: #6e7781;
+  --color-fg-on-emphasis: #ffffff;
+
+  /* Border colors */
+  --color-border-default: #d1d9e0;
+  --color-border-muted: #d1d9e0b3;
+  --color-border-subtle: #afb8c133;
+
+  /* Button colors */
+  --color-btn-text: #24292f;
+  --color-btn-bg: #f6f8fa;
+  --color-btn-border: #d1d9e0b3;
+  --color-btn-hover-bg: #f3f4f6;
+  --color-btn-hover-border: #d1d9e0;
+  --color-btn-active-bg: hsla(220,14%,93%,1);
+  --color-btn-active-border: #afb8c1;
+
+  /* Primary button */
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-bg: #1f883d;
+  --color-btn-primary-border: #1f883d;
+  --color-btn-primary-hover-bg: #1a7f37;
+  --color-btn-primary-hover-border: #1a7f37;
+
+  /* Danger button */
+  --color-btn-danger-text: #ffffff;
+  --color-btn-danger-bg: #d1242f;
+  --color-btn-danger-border: #d1242f;
+  --color-btn-danger-hover-bg: #b91c1c;
+  --color-btn-danger-hover-border: #b91c1c;
+
+  /* Accent colors */
+  --color-accent-fg: #0969da;
+  --color-accent-emphasis: #0969da;
+  --color-accent-muted: #54aeff66;
+  --color-accent-subtle: #ddf4ff;
+
+  /* Success colors */
+  --color-success-fg: #1a7f37;
+  --color-success-emphasis: #1f883d;
+  --color-success-muted: #1f883d40;
+  --color-success-subtle: #dcffe4;
+
+  /* Danger colors */
+  --color-danger-fg: #d1242f;
+  --color-danger-emphasis: #da3633;
+  --color-danger-muted: #da363340;
+  --color-danger-subtle: #ffebe9;
+
+  /* Control colors */
+  --color-control-border-default: #d1d9e0;
+  --color-control-border-disabled: hsla(210,18%,87%,1);
+  --color-input-bg: #ffffff;
+  --color-input-border: #d1d9e0;
+  --color-input-disabled-bg: #f6f8fa;
+
+  /* Focus colors */
+  --color-focus-border: #0969da;
+  --color-focus-outline: #0969da;
+
+  /* Shadow */
+  --color-shadow-small: #1f23280f;
+  --color-shadow-medium: #1f232826;
+  --color-shadow-large: #1f23284d;
+  --color-shadow-extra-large: #1f232880;
+}
+
+/* Dark theme - applied when user prefers dark color scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Canvas colors */
+    --color-canvas-default: #0d1117;
+    --color-canvas-subtle: #161b22;
+    --color-canvas-inset: #161b22;
+
+    /* Foreground colors */
+    --color-fg-default: #e6edf3;
+    --color-fg-muted: #8b949e;
+    --color-fg-subtle: #6e7681;
+    --color-fg-on-emphasis: #ffffff;
+
+    /* Border colors */
+    --color-border-default: #30363d;
+    --color-border-muted: #30363db3;
+    --color-border-subtle: #21262d33;
+
+    /* Button colors */
+    --color-btn-text: #c9d1d9;
+    --color-btn-bg: #21262d;
+    --color-btn-border: #30363db3;
+    --color-btn-hover-bg: #30363d;
+    --color-btn-hover-border: #8b949e;
+    --color-btn-active-bg: hsla(212,12%,18%,1);
+    --color-btn-active-border: #6e7681;
+
+    /* Primary button */
+    --color-btn-primary-text: #ffffff;
+    --color-btn-primary-bg: #238636;
+    --color-btn-primary-border: #238636;
+    --color-btn-primary-hover-bg: #2ea043;
+    --color-btn-primary-hover-border: #2ea043;
+
+    /* Danger button */
+    --color-btn-danger-text: #ffffff;
+    --color-btn-danger-bg: #da3633;
+    --color-btn-danger-border: #da3633;
+    --color-btn-danger-hover-bg: #f85149;
+    --color-btn-danger-hover-border: #f85149;
+
+    /* Accent colors */
+    --color-accent-fg: #58a6ff;
+    --color-accent-emphasis: #1f6feb;
+    --color-accent-muted: #58a6ff66;
+    --color-accent-subtle: #0d2840;
+
+    /* Success colors */
+    --color-success-fg: #3fb950;
+    --color-success-emphasis: #238636;
+    --color-success-muted: #23863640;
+    --color-success-subtle: #0f2419;
+
+    /* Danger colors */
+    --color-danger-fg: #f85149;
+    --color-danger-emphasis: #da3633;
+    --color-danger-muted: #da363340;
+    --color-danger-subtle: #2d1011;
+
+    /* Control colors */
+    --color-control-border-default: #30363d;
+    --color-control-border-disabled: hsla(215,8%,47%,1);
+    --color-input-bg: #0d1117;
+    --color-input-border: #30363d;
+    --color-input-disabled-bg: #161b22;
+
+    /* Focus colors */
+    --color-focus-border: #58a6ff;
+    --color-focus-outline: #58a6ff;
+
+    /* Shadow */
+    --color-shadow-small: #010409;
+    --color-shadow-medium: #010409;
+    --color-shadow-large: #010409;
+    --color-shadow-extra-large: #010409;
+  }
+}
+
+/* Base styles for the extension */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-canvas-default);
+  color: var(--color-fg-default);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Focus outline styles */
+*:focus {
+  outline: 2px solid var(--color-focus-outline);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-focus-outline);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styles for dark theme */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-canvas-subtle);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-default);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-fg-muted);
+  }
+}

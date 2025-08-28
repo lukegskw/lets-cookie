@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-bottom: 1px solid var(--color-border-default);
+  padding: 16px;
+
+  &:hover {
+    background-color: var(--color-canvas-subtle);
+  }
+}
+
+.contentSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cookieName {
+  font-weight: 600;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-fg-default);
+  font-size: 14px;
+}
+
+.valueInput {
+  width: 100%;
+  background-color: var(--color-input-bg);
+  border: 1px solid var(--color-input-border);
+  color: var(--color-fg-default);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    border-color: var(--color-focus-border);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-accent-muted);
+  }
+
+  &::placeholder {
+    color: var(--color-fg-muted);
+  }
+}
+
+.actionsSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tabsList {
+  height: 200px;
+  overflow-y: auto;
+  background-color: var(--color-canvas-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+}
+
+.tabItem {
+  min-width: 200px;
+  max-width: 300px;
+  color: var(--color-fg-default);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border-subtle);
+
+  &:hover {
+    background-color: var(--color-canvas-subtle) !important;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.activeTab {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent-fg);
+  font-weight: 500;
+}
+
+

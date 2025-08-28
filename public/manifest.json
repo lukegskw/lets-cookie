@@ -3,7 +3,7 @@
 
   "name": "Let's Cookie!",
   "description": "Your cookie manager",
-  "version": "1.0",
+  "version": "1.1",
 
   "action": {
     "default_icon": "icon16.png",
@@ -20,7 +20,14 @@
     "service_worker": "js/background.js"
   },
 
-  "permissions": ["cookies", "tabs"],
+  "permissions": ["cookies", "tabs", "scripting"],
 
-  "host_permissions": ["<all_urls>"]
+  "host_permissions": ["<all_urls>"],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["icon16.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

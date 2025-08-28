@@ -31,10 +31,31 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: {
+                namedExport: false,
+                exportLocalsConvention: "as-is",
+                localIdentName: "[name]_[local]__[hash:base64]",
+              },
+            },
+          },
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".css"],
+    extensions: [".ts", ".tsx", ".js"],
   },
   plugins: [
     new CopyPlugin({

@@ -1,0 +1,36 @@
+.container {
+  background-color: var(--color-canvas-default);
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: var(--color-fg-default);
+  font-weight: 600;
+}
+
+.subtitle {
+  color: var(--color-fg-muted);
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.error {
+  color: var(--color-danger-fg);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.noCookies {
+  color: var(--color-fg-subtle);
+  font-style: italic;
+}
