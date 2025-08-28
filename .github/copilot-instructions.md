@@ -1,4 +1,4 @@
-# CLAUDE.md
+# copilot-instructions.md
 
 This file provides guidance to Claude Code (claude.ai/code) and Github Copilot when working with code in this repository.
 
