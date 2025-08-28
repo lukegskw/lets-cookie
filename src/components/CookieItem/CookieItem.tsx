@@ -15,9 +15,9 @@ type Props = {
 export const CookieItem = ({ cookie, onApply, onDelete, onUpdate }: Props) => {
   const [tabs, setTabs] = useState<Tab[]>([]);
   const [value, setValue] = useState(cookie.value);
+  const [hoveredTabId, setHoveredTabId] = useState<number | null>(null);
 
   const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("editing cookie", cookie);
     const newValue = e.target.value;
     setValue(newValue);
     onUpdate(cookie, newValue);
@@ -32,6 +32,65 @@ export const CookieItem = ({ cookie, onApply, onDelete, onUpdate }: Props) => {
   const handleTabSelect = (tab: Tab) => {
     onApply(tab);
     setTabs([]);
+  };
+
+  const changeFavicon = async (
+    tabId: number,
+    iconType: "highlight" | "restore"
+  ) => {
+    try {
+      const faviconDataUrl =
+        iconType === "highlight" ? chrome.runtime.getURL("icon16.png") : null;
+
+      await chrome.scripting.executeScript({
+        target: { tabId },
+        func: (dataUrl: string | null) => {
+          const existingFavicon = document.querySelector(
+            'link[rel*="icon"]'
+          ) as HTMLLinkElement;
+
+          if (dataUrl) {
+            // Store original favicon
+            if (existingFavicon && !existingFavicon.dataset.original) {
+              existingFavicon.dataset.original = existingFavicon.href;
+            }
+
+            // Change to highlight icon
+            if (existingFavicon) {
+              existingFavicon.href = dataUrl;
+            } else {
+              const link = document.createElement("link");
+              link.rel = "icon";
+              link.href = dataUrl;
+              document.head.appendChild(link);
+            }
+          } else {
+            // Restore original favicon
+            if (existingFavicon && existingFavicon.dataset.original) {
+              existingFavicon.href = existingFavicon.dataset.original;
+              delete existingFavicon.dataset.original;
+            }
+          }
+        },
+        args: [faviconDataUrl],
+      });
+    } catch (err) {
+      console.error("Error changing favicon:", err);
+    }
+  };
+
+  const handleTabHover = (tab: Tab) => {
+    if (tab.id) {
+      setHoveredTabId(tab.id);
+      changeFavicon(tab.id, "highlight");
+    }
+  };
+
+  const handleTabLeave = () => {
+    if (hoveredTabId) {
+      changeFavicon(hoveredTabId, "restore");
+      setHoveredTabId(null);
+    }
   };
 
   return (
@@ -60,6 +119,8 @@ export const CookieItem = ({ cookie, onApply, onDelete, onUpdate }: Props) => {
                     <ActionList.Item
                       key={tab.id}
                       onSelect={() => handleTabSelect(tab)}
+                      onMouseEnter={() => handleTabHover(tab)}
+                      onMouseLeave={handleTabLeave}
                       className={`${styles.tabItem} ${
                         tab.active ? styles.activeTab : ""
                       }`}
