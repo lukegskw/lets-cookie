@@ -1,0 +1,30 @@
+.copyButton {
+  background-color: var(--color-btn-bg);
+  border: 1px solid var(--color-btn-border);
+  color: var(--color-btn-text);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+
+  &:hover {
+    background-color: var(--color-btn-hover-bg);
+    border-color: var(--color-btn-hover-border);
+  }
+
+  &:active {
+    background-color: var(--color-btn-active-bg);
+    border-color: var(--color-btn-active-border);
+  }
+}
+
+
+.copiedIcon {
+  color: var(--color-success-fg);
+}
