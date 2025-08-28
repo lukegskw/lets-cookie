@@ -3,4 +3,4 @@ node_modules/
 dist/
 tmp/
 .npmrc
-copilot-instructions.md
+.github/
